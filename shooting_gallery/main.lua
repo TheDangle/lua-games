@@ -11,9 +11,16 @@ function love.load()
 	gameFont = love.graphics.newFont(40)
 end
 -- we can update and alter the variable in the update function
-function love.update(dt) -- dt stands for delta time
-	timer = timer - dt
-end
+function love.update(dt)
+	if timer > 0 then
+		timer = timer - dt
+	end
+
+	if timer < 0 then
+		timer = 0
+	end
+end -- dt stands for delta time
+
 -- we then draw the variable on the screen
 function love.draw()
 	love.graphics.setColor(1, 0, 0)
@@ -21,6 +28,7 @@ function love.draw()
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.setFont(gameFont)
 	love.graphics.print(score, 0, 0)
+	love.graphics.print(math.ceil(timer), 300, 0)
 end
 
 function love.mousepressed(x, y, button, istouch, presses)
