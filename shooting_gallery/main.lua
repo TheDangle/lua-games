@@ -6,12 +6,13 @@ function love.load()
 	target.radius = 50
 
 	score = 0
-	timer = 0
+	timer = 10
 
 	gameFont = love.graphics.newFont(40)
 end
 -- we can update and alter the variable in the update function
 function love.update(dt) -- dt stands for delta time
+	timer = timer - dt
 end
 -- we then draw the variable on the screen
 function love.draw()
