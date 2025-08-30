@@ -62,7 +62,7 @@ function PlayerMouseAngle()
 	return math.atan2(Player.y - love.mouse.getY(), Player.x - love.mouse.getX()) + math.pi
 end
 
--- function to spawn zombies
+-- function to spawn zombies randomly
 function SpawnZombie()
 	local zombie = {}
 	zombie.x = math.random(0, love.graphics.getWidth())
